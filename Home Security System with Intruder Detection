@@ -1,0 +1,20 @@
+int pirPin = 2;    # PIR sensor output connected to pin 2
+int ledPin = 13;   # LED connected to pin 13
+
+void setup() {
+  pinMode(pirPin, INPUT);
+  pinMode(ledPin, OUTPUT);
+  Serial.begin(9600);
+}
+
+void loop() {
+  int motion = digitalRead(pirPin);
+  if (motion == HIGH) {
+    digitalWrite(ledPin, HIGH); # Turn on the LED when motion is detected
+    Serial.println("Motion Detected!");
+  } else {
+    digitalWrite(ledPin, LOW);  # Turn off the LED when no motion is detected
+  }
+  delay(500);  # Adjust the delay based on your preference
+}
+
