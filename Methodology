@@ -1,7 +1,17 @@
 Step 1: Set up the Arduino
 1.1. Connect the PIR motion sensor to the Arduino. Connect the sensor’s VCC to 5V, GND to GND, and OUT to any digital pin (e.g., Pin 2).
-1.2. Connect an optional LED to the Arduino as well. Connect the LED’s anode (longer
-leg) to a current-limiting resistor (220-330 ohms) and then to a digital pin (e.g., Pin13). Connect the LED’s cathode (shorter leg) to GND.
+1.2. Connect an optional LED to the Arduino as well. Connect the LED’s anode (longer leg) to a current-limiting resistor (220-330 ohms) and then to a digital pin (e.g., Pin13). Connect the LED’s cathode (shorter leg) to GND.
 Step 2: Arduino Code
-Write the Arduino code using the Arduino IDE. This code reads the PIR sensor’s data and
-controls the LED based on motion detection.
+Write the Arduino code using the Arduino IDE. This code reads the PIR sensor’s data and controls the LED based on motion detection.
+Step 3: Test the Arduino
+Upload the code to your Arduino board using the Arduino IDE. Test the setup by monitoring the Serial Monitor in the IDE. It should display ”Motion Detected!” whenever motion is detected by the PIR sensor.
+Step 4: Set Up MATLAB for Email Sending
+4.1. Make sure you have MATLAB installed on your computer and a valid email account for sending emails.
+4.2. In MATLAB, navigate to the ”Home” tab and click on ”Preferences.”
+4.3. In the Preferences window, select ”Internet” and then ”Email.”
+4.4. Fill in your email settings (SMTP server, port, your email address, and password). Use the SMTP settings of your email provider (e.g., Gmail, Yahoo, etc.).
+4.5. Test your email configuration to ensure MATLAB can send emails.
+Step 5: MATLAB Code
+Now, create a MATLAB script to monitor the Arduino and send an email when motion is detected.
+Step 6: Run the MATLAB Code
+Run the MATLAB script, and it will continuously monitor the Arduino’s PIR sensor. When motion is detected, it will send an email to the specified recipient. Please note that you may need to modify the COM port (in MATLAB) and the email settings (in both MATLAB and the Arduino code) to match your specific setup. Additionally, consider adding extra security measures like a password to arm/disarm the system or integrating a camera module for capturing images/videos during intrusion detection.
