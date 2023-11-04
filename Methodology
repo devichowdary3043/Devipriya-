@@ -1,0 +1,7 @@
+Step 1: Set up the Arduino
+1.1. Connect the PIR motion sensor to the Arduino. Connect the sensor’s VCC to 5V, GND to GND, and OUT to any digital pin (e.g., Pin 2).
+1.2. Connect an optional LED to the Arduino as well. Connect the LED’s anode (longer
+leg) to a current-limiting resistor (220-330 ohms) and then to a digital pin (e.g., Pin13). Connect the LED’s cathode (shorter leg) to GND.
+Step 2: Arduino Code
+Write the Arduino code using the Arduino IDE. This code reads the PIR sensor’s data and
+controls the LED based on motion detection.
