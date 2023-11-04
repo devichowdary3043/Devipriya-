@@ -1,0 +1,28 @@
+function sendEmail(subject, message)
+    % Replace 'your_email@example.com' with the sender's email address
+     % Replace 'your_password' with the sender's email password
+    setpref('Internet', 'SMTP_Server', 'your_smtp_server');
+    setpref('Internet', 'E_mail', 'your_email@example.com');
+    setpref('Internet', 'SMTP_Username', 'your_email@example.com');
+    setpref('Internet', 'SMTP_Password', 'your_password');
+
+    props = java.lang.System.getProperties;
+    props.setProperty('mail.smtp.auth', 'true');
+    props.setProperty('mail.smtp.starttls.enable', 'true');
+
+    sendmail('recipient_email@example.com', subject, message);
+end
+
+arduino = arduino('COM3', 'Uno');  % Replace 'COM3' with your Arduino port
+pirPin = 'D2';  % Pin connected to the PIR sensor
+
+while true
+    motion = readDigitalPin(arduino, pirPin);
+    if motion
+        disp('Intruder detected!');
+        sendEmail('Intruder Alert', 'An intruder has been detected in your home.');
+    else
+        disp('No intruders detected.');
+    end
+    pause(5);  % Adjust the pause time (in seconds) based on your preference
+end
